@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\back\LoginController;
+use App\Http\Controllers\back\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/back/login', [LoginController::class, 'login']);
+Route::get('/back/dashboard', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
